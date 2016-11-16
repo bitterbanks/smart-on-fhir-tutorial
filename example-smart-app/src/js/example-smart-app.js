@@ -35,10 +35,12 @@
           var dobStr = monthIndex + '/' + day + '/' + year;
           var fname = '';
           var lname = '';
+		  var mstatus = '';
 
           if(typeof patient.name[0] !== 'undefined') {
             fname = patient.name[0].given.join(' ');
             lname = patient.name[0].family.join(' ');
+			mstatus = patient.name[0].maritalStatus.join(' ');
           }
 
           var height = byCodes('8302-2');
@@ -52,6 +54,7 @@
           p.gender = gender;
           p.fname = fname;
           p.lname = lname;
+		  p.mstatus = mstatus;
           p.age = parseInt(calculateAge(dob));
 
           if(typeof height[0] != 'undefined' && typeof height[0].valueQuantity.value != 'undefined' && typeof height[0].valueQuantity.unit != 'undefined') {
@@ -89,6 +92,7 @@
     return {
       fname: {value: ''},
       lname: {value: ''},
+	  mstatus: {value: ''},
       gender: {value: ''},
       birthdate: {value: ''},
       age: {value: ''},
@@ -149,6 +153,7 @@
     $('#loading').hide();
     $('#fname').html(p.fname);
     $('#lname').html(p.lname);
+	$('#mstatus').html(p.mstatus);
     $('#gender').html(p.gender);
     $('#birthdate').html(p.birthdate);
     $('#age').html(p.age);
