@@ -28,7 +28,7 @@
           var byCodes = smart.byCodes(obv, 'code');
           var gender = patient.gender;
 		  var mstatus  = patient.maritalStatus.text;
-		  var mstatus2 = patient.maritalStatus[0].coding.code;
+		  var mstatus2 = patient.maritalStatus.coding[0].code;
           var dob = new Date(patient.birthDate);
           var day = dob.getDate();
           var monthIndex = dob.getMonth() + 1;
