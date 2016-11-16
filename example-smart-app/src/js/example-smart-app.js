@@ -27,6 +27,7 @@
         $.when(pt, obv).done(function(patient, obv) {
           var byCodes = smart.byCodes(obv, 'code');
           var gender = patient.gender;
+		  var mstatus = patient.maritalStatus;
           var dob = new Date(patient.birthDate);
           var day = dob.getDate();
           var monthIndex = dob.getMonth() + 1;
@@ -35,12 +36,10 @@
           var dobStr = monthIndex + '/' + day + '/' + year;
           var fname = '';
           var lname = '';
-		  var mstatus = '';
 
           if(typeof patient.name[0] !== 'undefined') {
             fname = patient.name[0].given.join(' ');
             lname = patient.name[0].family.join(' ');
-			mstatus = patient.name[0].maritalStatus.join(' ');
           }
 
           var height = byCodes('8302-2');
