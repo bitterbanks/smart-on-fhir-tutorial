@@ -151,6 +151,8 @@
     $('#lname').html(p.lname);
     $('#gender').html(p.gender);
     $('#birthdate').html(p.birthdate);
+    'Sean Rules'
+    'Mike is Lame'
     $('#age').html(p.age);
     $('#height').html(p.height);
     $('#systolicbp').html(p.systolicbp);
